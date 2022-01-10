@@ -1,0 +1,42 @@
+{
+  "name": "@tarojs/plugin-platform-xhs",
+  "version": "0.0.0",
+  "description": "小红书小程序平台插件",
+  "contributors": ["LuMeiLing", "HongXin"],
+  "homepage": "https://github.com/NervJS/taro-plugin-platform-xhs",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [
+    "taro"
+  ],
+  "files": [
+    "index.js",
+    "dist",
+    "types"
+  ],
+  "types": "types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NervJS/taro-plugin-platform-xhs.git"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "bugs": {
+    "url": "https://github.com/NervJS/taro-plugin-platform-xhs/issues"
+  },
+  "peerDependencies": {
+    "@tarojs/components": "^3.3.0",
+    "@tarojs/service": "^3.3.0",
+    "@tarojs/shared": "^3.3.0"
+  },
+  "devDependencies": {
+    "@tarojs/components": "^3.3.0",
+    "@tarojs/service": "^3.3.0",
+    "@tarojs/shared": "^3.3.0",
+    "rollup": "^2.29.0",
+    "rollup-plugin-typescript2": "^0.27.3",
+    "typescript": "^4.0.3"
+  }
+}
