@@ -4,5 +4,6 @@ declare const xhs: any
 
 export function initNativeApi (taro) {
   processApis(taro, xhs)
-  taro.cloud = xhs.cloud
+  // 自定义api到taro对象上
+  // taro.cloud = xhs.cloud
 }

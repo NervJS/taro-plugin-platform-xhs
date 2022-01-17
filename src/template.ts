@@ -1,6 +1,7 @@
-import { RecursiveTemplate } from '@tarojs/shared/dist/template'
+import { UnRecursiveTemplate } from '@tarojs/shared/dist/template'
 
-export class Template extends RecursiveTemplate {
+export class Template extends UnRecursiveTemplate {
+  supportXS = false
   Adapter = {
     if: 'xhs:if',
     else: 'xhs:else',
@@ -9,16 +10,13 @@ export class Template extends RecursiveTemplate {
     forItem: 'xhs:for-item',
     forIndex: 'xhs:for-index',
     key: 'xhs:key',
-    xs: 'wxs',
     type: 'xhs'
   }
 
-  createMiniComponents (components): any {
-    const result = super.createMiniComponents(components)
-
-    // TODO: 删除小红书不支持的组件
-    // delete result['pure-view']
-
-    return result
-  }
+  // createMiniComponents (components): any {
+  //   const result = super.createMiniComponents(components)
+  //   // TODO: 删除小红书不支持的组件
+  //   // delete result['pure-view']
+  //   return result
+  // }
 }

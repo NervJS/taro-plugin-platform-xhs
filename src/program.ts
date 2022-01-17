@@ -5,10 +5,10 @@ import { components } from './components'
 const PACKAGE_NAME = '@tarojs/plugin-platform-xhs'
 
 export default class XHS extends TaroPlatformBase {
-  platform = 'kwai'
-  globalObject = 'ks'
-  runtimePath = `${PACKAGE_NAME}/dist/runtime`
+  platform = 'xhs'
+  globalObject = 'xhs'
   projectConfigJson = 'project.config.json'
+  runtimePath = `${PACKAGE_NAME}/dist/runtime`
   fileType = {
     templ: '.xhsml',
     style: '.css',
@@ -30,9 +30,7 @@ export default class XHS extends TaroPlatformBase {
     super(ctx, config)
 
     this.setupTransaction.addWrapper({
-      close () {
-        this.modifyTemplate()
-      }
+      close: this.modifyTemplate
     })
   }
 
@@ -40,7 +38,6 @@ export default class XHS extends TaroPlatformBase {
    * 增加组件或修改组件属性
    */
   modifyTemplate () {
-    const template = this.template
-    template.mergeComponents(this.ctx, components)
+    this.template.mergeComponents(this.ctx, components)
   }
 }

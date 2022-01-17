@@ -3,14 +3,14 @@ const typescript = require('rollup-plugin-typescript2')
 const cwd = __dirname
 
 const base = {
-  external: ['@tarojs/shared', '@tarojs/service', '@tarojs/plugin-platform-weapp/dist/runtime-utils'],
+  external: ['@tarojs/shared', '@tarojs/service'],
   plugins: [typescript({
     useTsconfigDeclarationDir: true
   })]
 }
 
 // 供 CLI 编译时使用的 Taro 插件入口
-const comileConfig = {
+const compileConfig = {
   input: join(cwd, 'src/index.ts'),
   output: {
     file: join(cwd, 'dist/index.js'),
@@ -43,4 +43,4 @@ const runtimeUtilsConfig = {
   ...base
 }
 
-module.exports = [comileConfig, runtimeConfig, runtimeUtilsConfig]
+module.exports = [compileConfig, runtimeConfig, runtimeUtilsConfig]
