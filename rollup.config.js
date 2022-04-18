@@ -1,12 +1,15 @@
 const { join } = require('path')
 const typescript = require('rollup-plugin-typescript2')
+import json from '@rollup/plugin-json'
+
 const cwd = __dirname
 
 const base = {
   external: ['@tarojs/shared', '@tarojs/service'],
   plugins: [typescript({
     useTsconfigDeclarationDir: true
-  })]
+  }),
+  json()]
 }
 
 // 供 CLI 编译时使用的 Taro 插件入口
