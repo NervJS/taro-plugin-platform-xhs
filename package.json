@@ -1,8 +1,11 @@
 {
   "name": "@tarojs/plugin-platform-xhs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "小红书小程序平台插件",
-  "contributors": ["LuMeiLing", "HongXin"],
+  "contributors": [
+    "LuMeiLing",
+    "HongXin"
+  ],
   "homepage": "https://github.com/NervJS/taro-plugin-platform-xhs",
   "license": "MIT",
   "main": "index.js",
