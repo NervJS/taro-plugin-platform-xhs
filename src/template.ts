@@ -1,5 +1,4 @@
 import { RecursiveTemplate } from '@tarojs/shared/dist/template'
-import viewConfig from './xhsConfig/view.json'
 
 export class Template extends RecursiveTemplate {
   supportXS = false
@@ -14,14 +13,7 @@ export class Template extends RecursiveTemplate {
     type: 'xhs'
   }
 
-  replacePropName (name: string, value: string,componentName:string) {
-    // value 代表默认值
-    console.log("componentName============", componentName.toLowerCase(), name, value, viewConfig[componentName.toLowerCase()])
-    if (value === 'eh') {
-      const nameLowerCase = name.toLowerCase()
-      if (nameLowerCase === 'bindlongtap') return 'bindlongpress'
-      return nameLowerCase
-    }
+  replacePropName (name: string, value: string, componentName:string) {
     return name
   }
 }

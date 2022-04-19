@@ -6,7 +6,6 @@ export const components = {
     size: '23'
   },
   Button: {
-    bindgetphonenumber: '',
     'data-channel': ''
   },
   Form: {
@@ -21,18 +20,6 @@ export const components = {
   },
   Video: {
     'play-btn-position': singleQuote('center'),
-    'pre-roll-unit-id': '',
-    'post-roll-unit-id': '',
-    bindAdStart: '',
-    bindAdEnded: '',
-    bindAdLoad: '',
-    bindAdClose: '',
-    bindAdError: ''
-  },
-  Ad: {
-    fixed: '',
-    type: singleQuote('banner'),
-    scale: '100'
   },
   Textarea: {
     'disable-default-padding': 'false'

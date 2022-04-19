@@ -18,14 +18,6 @@ export default class XHS extends TaroPlatformBase {
 
   template = new Template()
 
-  /**
-   * 1. setupTransaction - init
-   * 2. setup
-   * 3. setupTransaction - close
-   * 4. buildTransaction - init
-   * 5. build
-   * 6. buildTransaction - close
-   */
   constructor (ctx, config) {
     super(ctx, config)
 
