@@ -1,6 +1,7 @@
 import XHS from './program'
 import type { IPluginContext } from '@tarojs/service'
-// 小红书系纵向扩展
+
+// 让其它平台插件可以继承此平台
 export { XHS }
 
 export default (ctx: IPluginContext) => {
