@@ -1,6 +1,6 @@
 {
   "name": "@tarojs/plugin-platform-xhs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "小红书小程序平台插件",
   "contributors": [
     "LuMeiLing",
