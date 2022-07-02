@@ -14,6 +14,7 @@ export class Template extends RecursiveTemplate {
   }
 
   replacePropName (name: string, value: string, componentName:string) {
+    if (value === 'eh') return name.toLowerCase()
     return name
   }
 }
