@@ -28,7 +28,7 @@ taro build --type xhs --watch
 ##### 平台判断
 
 ```js
-if (process.TARO_ENV === 'xhs') {
+if (process.env.TARO_ENV === 'xhs') {
   // ...
 }
 ```
