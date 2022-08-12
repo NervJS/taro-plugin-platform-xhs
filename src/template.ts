@@ -15,6 +15,13 @@ export class Template extends RecursiveTemplate {
 
   replacePropName (name: string, value: string, componentName:string) {
     if (value === 'eh') return name.toLowerCase()
+
+    /**
+     * button 组件, 修改 share-type 字段为 data-share-type
+     */
+    if (componentName === 'button') {
+      if (name === 'share-type') return 'data-share-type'
+    }
     return name
   }
 }

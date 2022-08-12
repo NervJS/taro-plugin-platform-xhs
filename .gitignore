@@ -1,4 +1,5 @@
 dist/
+dist-dev/
 types
 node_modules
 .DS_Store

@@ -6,7 +6,8 @@ export const components = {
     size: '23'
   },
   Button: {
-    'data-channel': '',
+    'data-channel': singleQuote(''),
+    'share-type': singleQuote('normal'),
     bindGetPhoneNumber: '',
     bindGetUserInfo: '',
     bindOpenSetting: '',

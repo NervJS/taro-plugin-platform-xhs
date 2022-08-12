@@ -4,6 +4,8 @@ import json from '@rollup/plugin-json'
 
 const cwd = __dirname
 
+const output = process.env.NODE_ENV === 'development' ? 'dist-dev' : 'dist';
+
 const base = {
   external: ['@tarojs/shared', '@tarojs/service'],
   plugins: [typescript({
@@ -16,7 +18,7 @@ const base = {
 const compileConfig = {
   input: join(cwd, 'src/index.ts'),
   output: {
-    file: join(cwd, 'dist/index.js'),
+    file: join(cwd, `${output}/index.js`),
     format: 'cjs',
     sourcemap: true,
     exports: 'named'
@@ -28,7 +30,7 @@ const compileConfig = {
 const runtimeConfig = {
   input: join(cwd, 'src/runtime.ts'),
   output: {
-    file: join(cwd, 'dist/runtime.js'),
+    file: join(cwd, `${output}/runtime.js`),
     format: 'es',
     sourcemap: true
   },
@@ -39,7 +41,7 @@ const runtimeConfig = {
 const runtimeUtilsConfig = {
   input: join(cwd, 'src/runtime-utils.ts'),
   output: {
-    file: join(cwd, 'dist/runtime-utils.js'),
+    file: join(cwd, `${output}/runtime-utils.js`),
     format: 'es',
     sourcemap: true
   },
