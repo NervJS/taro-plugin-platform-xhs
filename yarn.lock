@@ -1151,9 +1151,9 @@
   integrity sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
 
 "@types/node@^18.7.9":
-  version "18.7.9"
-  resolved "http://npm.devops.xiaohongshu.com:7001/@types/node/download/@types/node-18.7.9.tgz#180bfc495c91dc62573967edf047e15dbdce1491"
-  integrity sha1-GAv8SVyR3GJXOWft8EfhXb3OFJE=
+  version "18.7.11"
+  resolved "https://registry.npmmirror.com/@types/node/-/node-18.7.11.tgz#486e72cfccde88da24e1f23ff1b7d8bfb64e6250"
+  integrity sha512-KZhFpSLlmK/sdocfSAjqPETTMd0ug6HIMIAwkwUpU79olnZdQtMxpQP+G1wDzCH7na+FltSIhbaZuKdwZ8RDrw==
 
 ansi-styles@^3.2.1:
   version "3.2.1"
