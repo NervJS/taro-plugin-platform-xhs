@@ -4,7 +4,7 @@ import json from '@rollup/plugin-json'
 
 const cwd = __dirname
 
-const output = process.env.NODE_ENV === 'development' ? 'dist-dev' : 'dist';
+const output = 'dist'
 
 const base = {
   external: ['@tarojs/shared', '@tarojs/service'],
