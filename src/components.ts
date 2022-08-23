@@ -5,6 +5,9 @@ export const components = {
   Icon: {
     size: '23'
   },
+  Input: {
+    'max-length': '',
+  },
   Button: {
     'data-channel': singleQuote(''),
     'share-type': singleQuote('normal'),
