@@ -24,7 +24,8 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "dev": "NODE_ENV=development rollup -c -w"
+    "dev": "NODE_ENV=development rollup -c -w",
+    "version": "npm run build"
   },
   "bugs": {
     "url": "https://github.com/NervJS/taro-plugin-platform-xhs/issues"
