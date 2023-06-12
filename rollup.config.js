@@ -1,6 +1,5 @@
 const { join } = require('path')
 const typescript = require('rollup-plugin-typescript2')
-import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json'
 
 const cwd = __dirname
@@ -14,11 +13,6 @@ const base = {
       useTsconfigDeclarationDir: true
     }),
     json(),
-
-    commonjs({
-      include: /node_modules/,
-      sourceMap: false,
-    })
   ]
 }
 
