@@ -11,6 +11,8 @@ export const components = {
   Button: {
     'data-channel': singleQuote(''),
     'share-type': singleQuote('normal'),
+    'contact-type': singleQuote('seller'),
+    'contact-id': singleQuote(''),
     bindGetPhoneNumber: '',
     bindGetUserInfo: '',
     bindOpenSetting: '',
@@ -34,5 +36,9 @@ export const components = {
   },
   Textarea: {
     'disable-default-padding': 'false'
+  },
+  Map: {
+    bindRegionChange: '',
+    bindregionchange: '',
   }
 }
