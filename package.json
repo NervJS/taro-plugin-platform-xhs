@@ -31,16 +31,16 @@
     "url": "https://github.com/NervJS/taro-plugin-platform-xhs/issues"
   },
   "peerDependencies": {
-    "@tarojs/components": "^3.3.0",
-    "@tarojs/service": "^3.3.0",
-    "@tarojs/shared": "^3.3.0"
+    "@tarojs/components": "^3.6.25",
+    "@tarojs/service": "^3.6.25",
+    "@tarojs/shared": "^3.6.25"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^24.1.0",
     "@rollup/plugin-json": "^4.1.0",
-    "@tarojs/components": "^3.3.0",
-    "@tarojs/service": "^3.3.0",
-    "@tarojs/shared": "^3.3.0",
+    "@tarojs/components": "^3.6.25",
+    "@tarojs/service": "^3.6.25",
+    "@tarojs/shared": "^3.6.25",
     "@types/node": "^18.7.9",
     "@types/webpack": "^5.28.1",
     "rollup": "^2.29.0",

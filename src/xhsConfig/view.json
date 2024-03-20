@@ -12,7 +12,14 @@
       "share": true,
       "getPhoneNumber": true,
       "getUserInfo": true,
-      "openSetting": true
+      "openSetting": true,
+      "contact": true
+    },
+    "contactId": true,
+    "contactType": {
+      "seller": true,
+      "goods": true,
+      "order": true
     },
     "hoverClass": true,
     "hoverStopPropagation": true,
@@ -131,12 +138,12 @@
     "bindtap": true,
     "bindmarkertap": true,
     "bindlabeltap": true,
-    "bindcontroltap": true,
+    "bindcontroltap": false,
     "bindcallouttap": true,
-    "bindupdated": true,
+    "bindupdated": false,
     "bindregionchange": true,
-    "bindpoitap": true,
-    "bindanchorpointtap": true
+    "bindpoitap": false,
+    "bindanchorpointtap": false
   },
   "movableArea": { "scaleArea": true },
   "movableView": {
@@ -348,6 +355,16 @@
     "src": true,
     "bindmessage": true,
     "bindload": true,
+    "binderror": true
+  },
+  "canvas": {
+    "canvas-id": true,
+    "disable-scroll": true,
+    "bindtouchstart": true,
+    "bindtouchmove": true,
+    "bindtouchend": true,
+    "bindtouchcancel": true,
+    "bindlongtap": true,
     "binderror": true
   }
 }
