@@ -1,8 +1,10 @@
-import { existsSync } from 'fs'
-import { resolve } from 'path'
-import { TaroPlatformBase } from '@tarojs/service'
-import { Template } from './template'
+import { IPluginContext, TaroPlatformBase } from '@tarojs/service'
+import { existsSync, readJSONSync } from 'fs-extra'
+import { join, resolve } from 'path'
+
+import packageJson from '../package.json'
 import { components } from './components'
+import { Template } from './template'
 
 const PACKAGE_NAME = '@tarojs/plugin-platform-xhs'
 
@@ -20,7 +22,7 @@ export default class XHS extends TaroPlatformBase {
 
   template = new Template()
 
-  constructor (ctx, config) {
+  constructor (ctx: IPluginContext, config) {
     super(ctx, config)
 
     if (!existsSync(resolve(ctx.ctx.appPath, 'project.xhs.json'))) {
@@ -28,7 +30,11 @@ export default class XHS extends TaroPlatformBase {
     }
 
     this.setupTransaction.addWrapper({
-      close: this.modifyTemplate
+      close: () => {
+        this.modifyTemplate()
+        ctx.generateFrameworkInfo()
+        this.addFrameworkInfoToProjectConfigJson()
+      }
     })
   }
 
@@ -37,5 +43,40 @@ export default class XHS extends TaroPlatformBase {
    */
   modifyTemplate () {
     this.template.mergeComponents(this.ctx, components)
+  }
+
+  /**
+   * 在 project.config.json 中添加框架信息，方便产物能被 IDE 消费和上报
+   */
+  addFrameworkInfoToProjectConfigJson () {
+    const info = {
+      framework: {
+        tool: 'Taro',
+        name: packageJson.name,
+        version: packageJson.version,
+      }
+    }
+
+    const { appPath, sourcePath } = this.ctx.paths
+
+    // 生成 project.config.json
+    const projectConfigFileName = this.projectConfigJson
+    let projectConfigPath = join(appPath, projectConfigFileName)
+    if (!existsSync(projectConfigPath)) {
+      // 若项目根目录不存在对应平台的 projectConfig 文件，则尝试从源代码目录查找
+      projectConfigPath = join(sourcePath, projectConfigFileName)
+      if (!existsSync(projectConfigPath)) return
+    }
+
+    const origProjectConfig = readJSONSync(projectConfigPath)
+
+    let distProjectConfig = origProjectConfig
+    if (origProjectConfig.compileType !== 'plugin') {
+      distProjectConfig = Object.assign({}, origProjectConfig, { miniprogramRoot: './' })
+    }
+    this.ctx.writeFileToDist({
+      filePath: 'project.config.json',
+      content: JSON.stringify({ ...distProjectConfig, ...info }, null, 2)
+    })
   }
 }

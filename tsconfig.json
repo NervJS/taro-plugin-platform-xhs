@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es2017",
     "module": "ES2015",
-    "rootDir": "./src",
+    "rootDir": ".",
     "outDir": "dist",
     "sourceMap": true,
     "baseUrl": ".",

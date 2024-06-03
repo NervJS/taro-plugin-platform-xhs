@@ -70,6 +70,18 @@
   "onShareAppMessage": {
     "callback": { "from": { "button": true, "menu": true }, "target": true }
   },
+  "onShareChat": {
+    "callback": {
+      {
+        "path": true,
+        "title": true,
+        "query": true,
+        "imageUrl": true,
+        "promise": true,
+        "content": true
+      }
+    }
+  },
   "onUnhandledRejection": { "callback": { "reason": true, "promise": true } },
   "resume": { "object": { "type": true, "setObject": true } },
   "arrayBufferToBase64": true,
