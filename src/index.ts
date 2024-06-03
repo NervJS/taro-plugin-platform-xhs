@@ -1,5 +1,7 @@
-import XHS from './program'
 import ConcatSource from 'webpack-sources/lib/ConcatSource'
+
+import XHS from './program'
+
 import type { IPluginContext } from '@tarojs/service'
 
 // 让其它平台插件可以继承此平台
@@ -29,5 +31,4 @@ export default (ctx: IPluginContext) => {
       assets['app.css'] = new ConcatSource(match[0], content.replace(COMMON_CSS_REG, ''))
     }
   })
-
 }

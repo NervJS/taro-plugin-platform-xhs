@@ -1,9 +1,10 @@
-import { existsSync, readJSONSync } from 'fs-extra'
-import { resolve, join } from 'path'
 import { IPluginContext, TaroPlatformBase } from '@tarojs/service'
-import { Template } from './template'
-import { components } from './components'
+import { existsSync, readJSONSync } from 'fs-extra'
+import { join, resolve } from 'path'
+
 import packageJson from '../package.json'
+import { components } from './components'
+import { Template } from './template'
 
 const PACKAGE_NAME = '@tarojs/plugin-platform-xhs'
 
@@ -21,7 +22,7 @@ export default class XHS extends TaroPlatformBase {
 
   template = new Template()
 
-  constructor(ctx: IPluginContext, config) {
+  constructor (ctx: IPluginContext, config) {
     super(ctx, config)
 
     if (!existsSync(resolve(ctx.ctx.appPath, 'project.xhs.json'))) {
@@ -40,14 +41,14 @@ export default class XHS extends TaroPlatformBase {
   /**
    * 增加组件或修改组件属性
    */
-  modifyTemplate() {
+  modifyTemplate () {
     this.template.mergeComponents(this.ctx, components)
   }
 
   /**
    * 在 project.config.json 中添加框架信息，方便产物能被 IDE 消费和上报
    */
-  addFrameworkInfoToProjectConfigJson() {
+  addFrameworkInfoToProjectConfigJson () {
     const info = {
       framework: {
         tool: 'Taro',
