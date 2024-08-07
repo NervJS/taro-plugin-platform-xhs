@@ -10,6 +10,7 @@ export class Template extends UnRecursiveTemplate {
     forItem: 'xhs:for-item',
     forIndex: 'xhs:for-index',
     key: 'xhs:key',
+    xs: 'sjs',
     type: 'xhs'
   }
 
