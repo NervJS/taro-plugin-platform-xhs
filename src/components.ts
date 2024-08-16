@@ -1,5 +1,10 @@
 import { singleQuote } from '@tarojs/shared'
 
+const _true = 'true'
+const _false = 'false'
+// const _empty = ''
+// const _zero = '0'
+
 export const components = {
   // ======== 调整属性 ========
   Icon: {
@@ -40,5 +45,14 @@ export const components = {
   Map: {
     bindRegionChange: '',
     bindregionchange: '',
+  },
+  ScrollView: {
+    'enable-flex': _false,
+    'refresher-enabled': _false,
+    'refresher-threshold': '45',
+    'refresher-default-style': "'black'",
+    'refresher-background': "'#FFF'",
+    'refresher-triggered': _false,
+    'show-scrollbar': _true,
   }
 }
