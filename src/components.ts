@@ -2,7 +2,7 @@ import { singleQuote } from '@tarojs/shared'
 
 const _true = 'true'
 const _false = 'false'
-// const _empty = ''
+const _empty = ''
 // const _zero = '0'
 
 export const components = {
@@ -54,5 +54,8 @@ export const components = {
     'refresher-background': "'#FFF'",
     'refresher-triggered': _false,
     'show-scrollbar': _true,
+    bindRefresherPulling: _empty,
+    bindRefresherRefresh: _empty,
+    bindRefresherRestore: _empty,
   }
 }
