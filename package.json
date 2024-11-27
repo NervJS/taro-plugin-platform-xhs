@@ -1,6 +1,6 @@
 {
   "name": "@tarojs/plugin-platform-xhs",
-  "version": "1.2.1",
+  "version": "1.2.2-beta.0",
   "description": "小红书小程序平台插件",
   "contributors": [
     "LuMeiLing",
@@ -32,19 +32,22 @@
   "bugs": {
     "url": "https://github.com/NervJS/taro-plugin-platform-xhs/issues"
   },
+  "dependencies": {
+    "webpack-sources": "3.2.3"
+  },
   "peerDependencies": {
-    "@tarojs/components": "^3.6.25",
-    "@tarojs/service": "^3.6.25",
-    "@tarojs/shared": "^3.6.25"
+    "@tarojs/components": ">=3",
+    "@tarojs/service": ">=3",
+    "@tarojs/shared": ">=3"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.6",
     "@commitlint/config-conventional": "^17.6.6",
     "@rollup/plugin-commonjs": "^24.1.0",
     "@rollup/plugin-json": "^4.1.0",
-    "@tarojs/components": "^3.6.25",
-    "@tarojs/service": "^3.6.25",
-    "@tarojs/shared": "^3.6.25",
+    "@tarojs/components": "~3.6.35",
+    "@tarojs/service": "~3.6.35",
+    "@tarojs/shared": "~3.6.35",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^18.7.9",
     "@types/webpack": "^5.28.1",
@@ -64,7 +67,7 @@
     "rollup": "^2.29.0",
     "rollup-plugin-typescript2": "^0.27.3",
     "typescript": "^4.0.3",
-    "webpack": "5.78.0"
+    "webpack": "^5"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
