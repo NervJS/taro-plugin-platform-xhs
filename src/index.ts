@@ -7,14 +7,24 @@ import type { IPluginContext } from '@tarojs/service'
 // 让其它平台插件可以继承此平台
 export { XHS }
 
-const COMMON_CSS_REG = /@import\s+['"]\.\/.+\.css['"];?/g
+const IMPORT_CSS_REG = /@import\s+['"].*?\.css['"];?/g
 
-export default (ctx: IPluginContext) => {
+const APP_STYLE_NAME = 'app.css'
+// const APP_ORIGIN_NAME = 'app-origin.css'
+// const COMMON_STYLE_NAME = 'common.css'
+
+export interface IOptions {
+  // 模板类型
+  template?: 'recursive' | 'unRecursive' | 'recursiveXs' | 'unRecursiveXs'
+}
+
+
+export default (ctx: IPluginContext, options: IOptions = {}) => {
   ctx.registerPlatform({
     name: 'xhs',
     useConfigName: 'mini',
     async fn ({ config }) {
-      const program = new XHS(ctx, config)
+      const program = new XHS(ctx, config, options)
       await program.start()
     }
   })

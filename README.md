@@ -16,6 +16,16 @@ module.exports = {
 }
 ```
 
+```js
+// Taro 项目配置
+module.exports = {
+  // ...
+  plugins: [
+    ['@tarojs/plugin-platform-xhs', { template: 'recursive' }]
+  ]
+}
+```
+
 #### 2. 编译为小红书小程序
 
 ```shell
