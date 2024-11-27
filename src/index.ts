@@ -28,7 +28,7 @@ export default (ctx: IPluginContext) => {
 
     const match = content.match(COMMON_CSS_REG)
     if (content !== '' && match?.length) {
-      assets['app.css'] = new ConcatSource(match[0], content.replace(COMMON_CSS_REG, ''))
+      assets['app.css'] = new ConcatSource(...match, content.replace(COMMON_CSS_REG, ''))
     }
   })
 }
