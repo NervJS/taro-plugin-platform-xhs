@@ -57,5 +57,22 @@ export const components = {
     bindRefresherPulling: _empty,
     bindRefresherRefresh: _empty,
     bindRefresherRestore: _empty,
-  }
+  },
+  // 平台组件
+  PostNoteButton: {
+    type: 'default',
+    size: 'default',
+    title: _empty,
+    content: _empty,
+    'media-info': _empty,
+    tags: _empty,
+    binderror: _empty,
+  },
+  GroupChatCard: {
+    type: 'card',
+    'group-ids': 'card',
+    bindjoingroup: _empty,
+    binderror: _empty,
+  },
+  VideoPlayer: {},
 }
