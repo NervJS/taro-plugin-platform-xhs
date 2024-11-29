@@ -23,6 +23,9 @@ export const hostConfig = {
     if (methods.indexOf('onShareChat') === -1) {
       methods.push('onShareChat')
     }
+    if (methods.indexOf('onCopyUrl') === -1) {
+      methods.push('onCopyUrl')
+    }
     return config
   }
 }
