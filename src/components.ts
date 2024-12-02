@@ -70,7 +70,7 @@ export const components = {
   },
   GroupChatCard: {
     type: 'card',
-    'group-ids': 'card',
+    'group-ids': _empty,
     bindjoingroup: _empty,
     binderror: _empty,
   },

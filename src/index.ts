@@ -34,9 +34,12 @@ export default (ctx: IPluginContext, options: IOptions = {}) => {
     if (assets[APP_STYLE_NAME]) {
       const content = assets[APP_STYLE_NAME].source()
       const source = new ConcatSource()
-      source.add(content.replace(IMPORT_CSS_REG, ($1) => {
-        return $1 + '\n'
-      }))
+      const macthes = content.matchAll(IMPORT_CSS_REG)
+      for (const macth of macthes) {
+        source.add(macth[0])
+        source.add('\n')
+      }
+      source.add(content.replace(IMPORT_CSS_REG, ''))
       assets[APP_STYLE_NAME] = source
     }
   })
